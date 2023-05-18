@@ -1,0 +1,44 @@
+# Yao v0.10.3 Official Release
+
+Yao v0.10.3 introduces two important features:
+
+**Neo AI Assistant**
+
+![Screenshot](https://raw.githubusercontent.com/YaoApp/yao-examples/main/neo/docs/screenshot.png)
+
+An out-of-the-box AI assistant with customizable commands.
+
+[Demo Application](https://github.com/YaoApp/yao-examples/tree/main/neo)
+
+**Application Independent Deployment**
+
+```bash
+ docker run -it --rm \
+      -v </your/app/root>:/app \
+      -e APP_NAME="dev-app-docker" \
+      -e PACK_FLAG="-l 123456" \
+      -e PACK_ENV="/app/pack.docker.yao" \
+      yaoapp/yao-build:0.10.3-amd64 make
+```
+
+[DockerFile](https://github.com/YaoApp/yao-dev-app/blob/main/.yao/docker/Dockerfile)
+
+## New Features
+
+- **[【New]** Neo (beta): An AI assistant capable of running custom commands.
+
+- **[【New]** yao pack (beta) command: Application packaging.
+
+- **[Refactor]** Gou Framework
+
+- **[【New]** OpenAI Process
+
+- **[【New]** aigc Process, : Transforming large models into versatile interfaces.
+
+- **[【New]** Dashboard and other page-level components.
+
+- **[更多]** bug fixes, optimizations for various functionalities.
+
+...
+
+For more features, please refer to the [documentation](https://yaoapps.com/doc).
