@@ -1,0 +1,44 @@
+# Yao v0.10.3 正式发布
+
+Yao v0.10.3 新增两个重要特性:
+
+**Neo AI 助手**
+
+![Screenshot](https://raw.githubusercontent.com/YaoApp/yao-examples/main/neo/docs/screenshot.png)
+
+开箱即用的 AI 助手, 可以自定义指令。
+
+[演示应用](https://github.com/YaoApp/yao-examples/tree/main/neo)
+
+**应用独立发布**
+
+```bash
+ docker run -it --rm \
+      -v </your/app/root>:/app \
+      -e APP_NAME="dev-app-docker" \
+      -e PACK_FLAG="-l 123456" \
+      -e PACK_ENV="/app/pack.docker.yao" \
+      yaoapp/yao-build:0.10.3-amd64 make
+```
+
+[DockerFile](https://github.com/YaoApp/yao-dev-app/blob/main/.yao/docker/Dockerfile)
+
+## 新特性
+
+- **[新增]** Neo (beta), 可以运行自定义指令的，AI 助手
+
+- **[新增]** yao pack (beta) 命令, 应用打包
+
+- **[重构]** Gou Framework
+
+- **[新增]** openai 处理器
+
+- **[新增]** aigc 处理器, 把大模型变成万能接口
+
+- **[新增]** Dashboard 等更多页面级别组件
+
+- **[更多]** 已知 BUG 修复, 优化一些功能
+
+...
+
+更多特性请看[文档](/doc)
