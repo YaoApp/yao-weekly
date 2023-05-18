@@ -18,6 +18,7 @@ jobs:
       - name: pack for Station (@Silicon Valley)
         run: |
           cp -r . ../dist
+          rm -rf ../dist/.git
           tar cvfz dist-weekly.tar.gz -C ../dist/ .
 
       - name: Push to Earth (@Beijing)
@@ -37,4 +38,4 @@ jobs:
           port: 22
           username: ubuntu
           key: ${{ secrets.SSH_KEY }}
-          script: cd /data/website/data/weekly && tar xvfz /home/ubuntu/dist-weekly.tar.gz
+          script: cd /data/website/data/weekly && sudo tar xvfz /home/ubuntu/dist-weekly.tar.gz
