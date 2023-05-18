@@ -1,0 +1,31 @@
+---
+- title: Yao 0.10.2 Released!
+  summary: |
+    Yao 0.10.2 refactored the Xgen UI engine, added Studio CLI, and DSL processes, and released the Yao Brain platform (DEMO version).
+    Based on these new features, developers can easily develop no-code products by programming.
+
+  author: Max
+  published_at: "2022-11-21 11:32:05"
+  markdown: v0.10.2.mdx
+
+- title: YAO 0.10.1 officially released!
+  summary: |
+    After a long period of preparation and several delays, Yao 0.10.1 is finally officially released!
+    YAO is an open-source application engine, written in Golang, in the form of a command-line tool that can be downloaded and used immediately. 
+    It is suitable for developing business systems, website/APP API, admin panel, self-built low-code platforms, etc.
+
+  author: Max
+  published_at: "2022-08-26 17:48:05"
+  markdown: v0.10.1.mdx
+
+- title: Yao 0.9.1 officially released!
+  summary: |
+    After a long period of preparation, Yao 0.9.1 is officially released!
+    We dare not say how great Yao is, but the fact is that we have indeed created a new creature. 
+    In the open source world, there is no such logic-driven front-end and back-end integration low-code development framework as Yao. 
+    Yao, provides another possibility for application development. This possibility allows enterprises and developers to gain a head start by greatly improving productivity in this rapidly changing era. 
+    Let each of us enjoy the convenience of digitalization.
+
+  author: Wendao
+  published_at: "2022-02-16 16:24:09"
+  markdown: v0.9.1.mdx
