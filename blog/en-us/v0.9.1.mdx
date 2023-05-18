@@ -1,0 +1,199 @@
+# Yao 0.9.1 officially released!
+
+After a long period of preparation, Yao 0.9.1 is officially released!
+
+We dare not say how great Yao is, but the fact is that we have indeed created a new creature. In the open source world, there is no such **logic-driven front-end and back-end integration low-code development framework** as Yao. Yao, provides another possibility for application development. This possibility allows enterprises and developers to gain a head start by greatly improving productivity in this rapidly changing era. Let each of us enjoy the convenience of digitalization.
+
+Yao includes the following core features to bring developers a new and unimaginably efficient development experience:
+
+- **No code**: Use JSON to create database models, write interfaces, describe interfaces, and truly code-free programming.
+
+- **Internet of Everything**: Supports running on ARM devices and can be used for IoT, edge computing, and industrial Internet.
+
+- **Data Visualization**: Easy-to-use BI components and functions that empower business with more possibilities.
+
+- **Processors**: Built-in series of processors that can be extended with dataflow, Javascirpt and GRPC plugins.
+
+- **Data flow**: Through data flow, developers can process data in any form, and support Javascript.
+
+- **Plug-in**: GRPC-based plug-in mechanism that supports function expansion in languages ​​such as nodejs and python.
+
+- **Management background**: By writing JSON description interface layout, you can quickly create various internal systems such as CRM and ERP.
+
+- **Real-time query**: Built-in query engine comparable to ES, and implements JSON query through DSL, which is simple and easy to use.
+
+- **Extreme performance**: Go language is used at the bottom layer, and its performance far exceeds that of Java and PHP. Distributed deployment can be done with one command.
+
+See [documentation](/doc) for more features.
+
+## What is Yao?
+
+Yao is an open source low-code application engine that supports rapid creation of web services and management backends.
+
+Yao provides an out-of-the-box CLI to create a database, write an interface, describe the interface, and execute `yao start` to build a background application. Different from low-code building pages, Yao provides complete back-end logic expression capabilities to support changing business scenarios.
+
+<Tabs defaultActiveKey='1'>
+<TabPane tab='Create database' key='1'>
+
+models/user.json
+
+```json
+{
+  "name": "user",
+  "table": {
+    "name": "user",
+    "comment": "user model",
+    "engine": "InnoDB"
+  },
+  "columns": [
+    {
+      "name": "id",
+      "type": "ID"
+    },
+    {
+      "label": "name",
+      "name": "name",
+      "type": "string",
+      "length": 200
+    }
+  ]
+}
+```
+
+</TabPane>
+
+<TabPane tab='write interface' key='2'>
+
+apis/user.json
+
+```json
+{
+  "name": "user_list",
+  "version": "1.0.0",
+  "description": "get the user list.",
+  "group": "user",
+  "guard": "bearer-jwt",
+  "paths": [
+    {
+      "path": "/list",
+      "method": "GET",
+      "process": "models.user.get",
+      "out": {
+        "status": 200,
+        "type": "application/json"
+      }
+    }
+  ]
+}
+```
+
+</TabPane>
+
+<TabPane tab='Describe interface' key='3'>
+
+pages/user.json
+
+```json
+{
+  "charts": [
+    {
+      "name": "Proportion of men and women",
+      "width": 9,
+      "type": "pie",
+      "props": {
+        "x_key": "sex",
+        "series": [
+          {
+            "name": "amounts",
+            "type": "pie",
+            "roseType": "area",
+            "itemStyle": {
+              "borderRadius": 3
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+</TabPane>
+</Tabs>
+
+## Why do Yao?
+
+Twenty years of the Internet, we have gone from the wild to the present, from the closed development of slash-and-burn to the current open-source-driven win-win model; from C, C++ to PHP, .Net, JAVA, to today's Nodejs, Go, Rust; from ThinkPHP, Symphony, Spring to Laravel, Spring Cloud, Gin, Beego; from Jsp, Mustache, Ejs, Handlebars to Emberjs, Angularjs, Vue, React, Nextjs, and now Alpine, Svelte; from Gulp, Grunt, To Rollup, Webpack, Babel, to Esbuild, Swc, Vite.
+
+Changes are also taking place in the Dev field, starting with Docker and moving to the cloud. The field of game development has also undergone tremendous changes. The birth of Unity and Unreal Engine means that game development has entered its "industrial age".
+
+When will the "industrial age" in the application field come? Can the current development model become better and more efficient, and is the current development model the final form of the Internet industry?
+
+We have seen too many projects, and most of the time is spent on communication and "alignment", and the time left for people to do product design and application development is thus squeezed. This kind of development that relies on people to "align" through non-stop meetings Is the pattern OK?
+
+Is there a development model that can free developers from repetitive and ineffective communication and really focus on the business itself?
+
+We used to be troubled by the above problems, and then we started to try the code generation scheme. For a long time, the code generation scheme saved us a lot of time, but it was not enough, we needed a more standardized, general , and a more powerful code generation solution, you can think of it as a low-code solution, but in our eyes, we will not be entangled in the concept of low-code, but can eventually turn a lot of mechanical and repetitive work into Leave it to the machine to do it, and liberate people.
+
+Moreover, we found that for the needs of some enterprises' digitalization and IoT scenarios, all they need is a backend that can easily manage data and perform data analysis, and many of the logic and interfaces are common, and some skilled Engineers can quickly achieve their goals by copying and pasting, but due to human factors, there will also be some omissions and bugs, but this kind of problem can be completely avoided.
+
+Therefore, on the basis of the code generator, we let the front-end interface also be generated by dynamic components + configuration. At the same time, because it is the back-end parsing configuration, we directly use the server to realize some configuration transformations, such as the described interface. Convert it into data and then send it directly to the component for rendering during rendering. It supports various scenarios by designing many optional properties for the Table component, and you only need to declare the corresponding properties in JSON.
+
+Later we added `Process`[processor](/doc/b.Basic features/d.Using processors), `Dataflow`[Dataflow](/doc/b.Basic features/e.Writing dataflow), To implement more complex business scenarios, in order to implement some complex queries, [`Guo Query DSL`] (/doc/c. Advanced Features/c. Complex Data Query) is designed, which maps JSON to Sql, and provides many Quick action. In various business scenarios, we have extracted 5 types of pages, more than 30 dynamic components, which you can call "cloud components", and nearly 80 built-in processors. We also built V8, a JS Engine, you can implement custom `Process` and `Dataflow` through JS, so far, Yao came into being.
+
+We didn't deliberately want to be a tool for other people's use only, it has no value to us, our original purpose is purely for self-use, until we realize that we may have created a new species, and it may subvert The current application development model is like [Ford invented the automobile assembly line] (https://baike.baidu.com/item/%E7%A6%8F%E7%89%B9%E7%94%9F%E4%BA% A7%E6%B5%81%E6%B0%B4%E7%BA%BF/4122269), the assembly line has brought about a substantial increase in productivity, and mankind has accelerated into the era of industrialization, and Yao's mission is to make the era of interconnection of all things, Come early.
+
+Taoism says: "The highest good is like water", and I often like to say a sentence: "The water comes naturally", that is, to follow the natural development law of things, not to be irritable, not to worry, not to encourage the growth of the seedlings, not to steal the bells, follow the original heart, step by step, and walk out a path. Road, no matter whether this road has been walked or not, walk out of your own style and out of your own value.
+
+So after a long time of practice and polishing, we chose to open source Yao. You can think of it as a command-line tool, a serverless server, a gateway more powerful than Nginx, a code generator, and a database management system. Through your "processing", it can also be a CMS, a CRM, an ERP, a background management system, or even, based on Yao, you can easily create a low-code development platform.
+
+We don't produce ideas, we only provide hammers and hammers for you to realize your ideas. You can also use Yao as a lathe. If your enterprise is large, you can build an application development pipeline based on Yao - and this is also our internal General use.
+
+## Why open source?
+
+### Dare to be the first in the world
+
+Frankly speaking, in this era, it is already a difficult thing to be seen by everyone, so there will be a lot of bad coins driving out good coins, but in the open source world, it will be much better, so we give up to build Platform, turn to open source, there are many low-code platforms on the market, how many are open source?
+
+You say you are better than others, you say you are a new species, then open source, everyone compares, touches, learns from each other, the good will become better, this model will eventually make Yao better.
+
+### Idealism
+
+<p>
+  <a href="https://github.com/MatrixAge" target="_blank">
+    I
+  </a>
+  and
+  <a href="https://github.com/trheyi" target="_blank">
+    Brother Ping
+  </a>
+  In a sense, they are a bit idealistic. Although they have been struggling in the
+  society for so many years, the ideal is no longer shining, but it is still there.
+  After living, if it can bring value to others and society Bring value, drive the
+  development of an industry, and be like Like Docker, as for whether to make money
+  or not, I think it's a matter of course.
+</p>
+
+Being able to help others make money is a big deal.
+
+### Developer Relations
+
+On Zhihu, I noticed that 80% of the answers on the topic of "low code" tended to be negative, and 60% of the answers were talking about a thing that seemed to have nothing to do with me in a superior mentality. 20% of the positive or neutral answers are also mostly promoting how good their platform is.
+
+"Low-code" has been stigmatized.
+
+In addition to some of the above reasons, it is more of a conflict from the heart of many programmers. This conflict leads to low-code consumers who are never developers, but enterprises. Most of the low-code exists in the form of platforms. .
+
+Don't programmers need low code? It takes at least 1 week to write a set of blog background with Nodejs + React, and you still need to write code, database migration, and automated deployment when expanding functions. If you use Yao, a blog background, you need to do it in 30 minutes.
+
+Programmers need low-code, and the era of the Internet of Everything needs low-code even more. If you think the word low-code is unpleasant, you can think of Yao as a code generator, just a somewhat powerful code generator.
+
+The progress of science and technology is not stagnant due to human will. The wheel of history is rolling forward. What you and I can do is to try our best to shine your own light before the end of an era and the arrival of the next era, illuminating the road ahead and also illuminating the future. others.
+
+## The way ahead
+
+Just like Angularjs, Yao may face all kinds of imitators after launch, and these imitators may be better than Yao in some aspects, so we will not stop there.
+
+Run in small steps, this is what I have A ethos and way of doing things that a business I've been at has learned, and in the days ahead, what we can guarantee is that Yao will remain updated for as long as we've been in business. We will also open some functions to the developers who have contributed and strength in the community. We will not advocate the spirit of open source. The purpose of what we do is very simple:
+
+Make things better.
