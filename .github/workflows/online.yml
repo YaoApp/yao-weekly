@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: "Version tags"
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: pack for Station (@Silicon Valley)
+        run: |
+          cp -r . ../dist
+          tar cvfz dist-weekly.tar.gz -C ../dist/ .
+
+      - name: Push to Earth (@Beijing)
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: dist-weekly.tar.gz
+          host: ${{ secrets.HOST_228 }}
+          remote: /home/ubuntu/
+          port: 22
+          user: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+
+      - name: Distribution
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_228 }}
+          port: 22
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          script: cd /data/website/data/weekly && tar xvfz /home/ubuntu/dist-weekly.tar.gz
