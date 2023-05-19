@@ -1,5 +1,16 @@
 [
   {
+    "version": "0.10.3",
+    "title": "Yao v0.10.3 Official Release",
+    "published_at": "2023-05-18 11:32:05",
+    "lang": "en-US",
+    "abstract": "## Yao v0.10.3 Official Release",
+    "notes": "",
+    "github": "https://github.com/YaoApp/yao/releases/tag/v0.10.3",
+    "artifacts": [],
+    "path": "weekly/release/en-us/v0.10.3"
+  },
+  {
     "abstract": "## 0.10.2 released",
     "artifacts": [
       {
@@ -28,7 +39,8 @@
     "notes": "# Yao 0.10.2 Released\n\nYao 0.10.2 refactored the Xgen UI engine, added Studio CLI, and DSL processes, and released the Yao Brain platform (DEMO version).\n\nBased on these new features, developers can **easily** develop **no-code** products by **programming**.\n\n**Yao Admin**\n\nWe use Yao to develop an admin dashboard **Yao Admin**.\n\n**Connect to the database, then you got an admin dashboard**.\n\nYao Admin will be released as an independent product, and you can visit the code repository for more features.\n\nRepo: [https://github.com/YaoApp/yao-admin](https://github.com/YaoApp/yao-admin)\n\n## New features\n\n- **[NEW]** Refactoring Xgen, white theme, optimized DSL, added Bind, Compute, Cloud Propos\n\n- **[NEW]** Add yao get command, it is easier to copy the application\n\n- **[NEW]** Add Cloud function, direct connection interface Action\n\n- **[NEW]** Add Studio CLI & Service, programmatically generate DSL and script\n\n- **[NEW]** Add File system handler & JS API\n\n- **[NEW]** Add HTTP request handler & JS API\n\n- **[NEW]** Add codec, encryption and decryption, certificate import, and other processors\n\n- **[IMPROVED]** Deprecate yao init command, and use the GUI to complete the application initialization\n\n- **[RELEASE]** Yao Brain platform (DEMO), used to generate DSL code automatically\n\n- **[MORE]** bug fixes and improves some feature\n\nSee [documentation](https://yaoapps.com/doc) for more features.\n",
     "published_at": "2022-11-21 11:32:05",
     "title": "0.10.2 released",
-    "version": "0.10.2"
+    "version": "0.10.2",
+    "path": "weekly/release/en-us/v0.10.2"
   },
 
   {
@@ -60,7 +72,8 @@
     "notes": "# YAO 0.10.1 Released\n\nAfter a long period of preparation and several delays, Yao 0.10.1 is finally officially released!\n\n0.10 is also the last v0 version, and YAO's \"Hello World\" has finally been written. The next major version upgrade will be the official version 1.0.\n\nWe have also opened social network accounts such as Twitter, Youtube, Discord, Medium, etc., and will share the progress of YAO, thinking about software development, usage tutorials, open source YAO applications and some enterprise-level practice cases. Welcome to follow us!\n\n## New version improvements & new features\n\nIn the past few months, we have improved the documentation, fixed several bugs, and launched a series of important functions!\n\n- **[Improve the document]** The document has been rewritten, the document structure has been optimized, and some missing contents have been supplemented.\n\n- **[INFRA & YAO Cloud]** INFRA has launched a small-scale public beta, supports one-click deployment of YAO applications, and will provide application hosting services soon.\n\n- **[Integrated software and hardware LocalSaaS]** Determine ARM device selection, performance and stability testing; YAO applications support software and hardware integrated mode, which can be used in many scenarios of edge computing.\n\n- **[YAO DSL]** Optimize the DSL specification and part of the document structure, making it easier to write and maintain.\n\n- **[YAO Widgets]** Widget supports customize, and provides more built-in Widgets, you can use DSL to quickly implement more functional modules, and you can even easily build your own low-code platform.\n\n- **[Socket & WebSocket support]** Added Socket & WebSocket commands to establish connections and expand the available scenarios of YAO.\n\n- **[Concurrent Tasks & Scheduled Tasks]** Quickly configure concurrent tasks and scheduled tasks through a DSL, and tasks with a large amount of computation support asynchronous backend running.\n\n- **[Store KV Storage]** provides Store storage DSL and JavaScript API, which can be used for data caching.\n\n- **[More Processors]** Provide a series of built-in processors such as table schema changing, import and export, etc., to realize various functions more conveniently.\n\n- **[Fix some bugs]** Fixed DNS, hot update, table and other bugs, optimized engine startup and hot update logic in development mode.\n\n## Is YAO low-code?\n\nOur positioning of YAO is to provide developers with application development and running tools.\n\nYAO does not change development habits, does not kidnap users, and is not a one-time code. Applications developed using YAO are easier to upgrade and maintain.\n\nIt is hoped that after several years of polishing, in the field of enterprise application development, YAO can help creators focus on design and artistic creation like Unreal Engine. One person or a small team of several people can create excellent works that are popular in the world.\n\nIt doesn't matter if it's low-code or not, and we don't bother with concepts. What matters is what YAO can help developers do and how to do it better.\n",
     "published_at": "2022-08-29 17:26:09",
     "title": "0.10.1 released",
-    "version": "0.10.1"
+    "version": "0.10.1",
+    "path": "weekly/release/en-us/v0.10.1"
   },
 
   {
@@ -92,6 +105,7 @@
     "notes": "# v0.9.1 Released\n\nAfter a long period of preparation, Yao 0.9.1 is officially released! We dare not say how great Yao is, but the fact is that we have indeed created a new creature. In the open source world, there is no such **logic-driven front-end and back-end integration low-code development framework** as Yao. Yao, provides another possibility for application development. This possibility allows enterprises and developers to gain a head start by greatly improving productivity in this rapidly changing era. Let each of us enjoy the convenience of digitalization.\n\n## Release notes\n\nYao includes the following core features to bring developers a new and unimaginably efficient development experience:\n\n- **No code**: Use JSON to create database models, write interfaces, describe interfaces, and truly code-free programming.\n\n- **Internet of Everything**: Supports running on ARM devices and can be used for IoT, edge computing, and industrial Internet.\n\n- **Data Visualization**: Easy-to-use BI components and functions that empower business with more possibilities.\n\n- **Processors**: Built-in series of processors that can be extended with dataflow, Javascirpt and GRPC plugins.\n\n- **Data flow**: Through data flow, developers can process data in any form, and support Javascript.\n\n- **Plug-in**: GRPC-based plug-in mechanism that supports function expansion in languages ​​such as nodejs and python.\n\n- **Management background**: By writing JSON description interface layout, you can quickly create various internal systems such as CRM and ERP.\n\n- **Real-time query**: Built-in query engine comparable to ES, and implements JSON query through DSL, which is simple and easy to use.\n\n- **Extreme performance**: Go language is used at the bottom layer, and its performance far exceeds that of Java and PHP. Distributed deployment can be done with one command.\n\nSee [documentation](/doc) for more features.\n",
     "published_at": "2022-02-16 16:24:09",
     "title": "0.9.1 released",
-    "version": "0.9.1"
+    "version": "0.9.1",
+    "path": "weekly/release/en-us/v0.9.1"
   }
 ]
