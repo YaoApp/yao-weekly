@@ -1,0 +1,170 @@
+# Yao 0.10.3 正式发布 拥抱 AIGC 时代！
+
+> ChatGPT 解锁了新的人机交互方式，人类可以与电脑直接交流了！AIGC 时代已经到来，万千应用正在升级或重构，Yao 提供了一个开箱即用的解决方案，可以快速开发具备 AIGC 能力的应用。
+
+<观看视频介绍>
+
+## 新特性介绍
+
+### 开箱即用的 AI 助手
+
+![Neo AI 助手](https://release-bj.yaoapps.com/docs/v0.10.3/release/neo.png)
+
+**AI 助手将成为新一代企业应用的标配**，更多功能将通过聊天会话的方式，呈现给用户使用。
+
+**Yao 提供了一个开箱即用的 AI 助手 Neo**，开发者可以通过编写 Neo DSL，给 AI 助手添加指令，让 Neo 具备各种各样的能力；调用 Yao Studio API，即可实现通过聊天会话的方式，制作 CURD 模块。
+
+只要在 Neo DSL 中指定 `prepare` 处理器，即可实现访问本地向量数据库，根据用户问题，匹私有数据，**让 ChatGPT 拥有记忆**。
+
+当然，也可以只把 Neo 当做一个 **ChatGPT 本地终端**来使用，只要在 `.env` 文件中配置 OpenAI API Key 即可。
+
+参考应用:
+
+| 应用      | 介绍                                | 仓库地址                                             |
+| --------- | ----------------------------------- | ---------------------------------------------------- |
+| Neo       | 给 AI 助手 添加自定义指令的应用示例 | https://github.com/YaoApp/yao-examples/tree/main/neo |
+| Knowledge | AI 知识库 访问私有数据的应用示例    | https://github.com/YaoApp/yao-knowledge              |
+
+### 应用独立发布
+
+![应用独立发布](https://release-bj.yaoapps.com/docs/v0.10.3/release/knowledge.png)
+
+Yao 具备低代码构建能力, 但并非低代码平台或代码生成器。**低代码构建能力仅为 Yao 的众多特性的一小部分**。
+
+Yao 内建 v8 引擎，具备完整的逻辑表达和常规编程扩展能力，可以**在 AI 编程、低代码编程和专业编程中无缝切换**，使用方式与 Node/PHP 相似。
+
+Yao 采用 Apache 2.0 协议开源, 开发者可获取**完整源码, 可以商用。**
+
+**应用的知识产权归开发者所有，应用独立发布。**
+
+新版可将应用打包为独立制品，**闭源发布**，支持自定义源码保护算法。
+
+**打包为独立制品**
+
+```bash
+docker run -it --rm \
+      -v </your/app/root>:/app \
+      -e APP_NAME="dev-app-docker" \
+      -e PACK_FLAG="-l 123456" \
+      -e PACK_ENV="/app/pack.docker.yao" \
+      yaoapp/yao-build:0.10.3-amd64 make
+```
+
+**支持自定义应用源码保护算法**
+
+```golang
+//
+// 源码参考 yao-knowledge 仓库
+// https://github.com/YaoApp/yao-knowledge/blob/main/.yao/pack/pack.go
+//
+
+// Encrypt encrypts a byte slice.
+// ** Do not change this function name **
+func (pack *Pack) Encrypt(reader io.Reader, writer io.Writer) error {
+
+	// ****************************************************************
+	// Replace the following code with your own implementation
+	// ****************************************************************
+    return nil
+}
+
+// Decrypt decrypts a byte slice.
+// ** Do not change this function name **
+func (pack *Pack) Decrypt(reader io.Reader, writer io.Writer) error {
+
+	// ****************************************************************
+	// Replace the following code with your own implementation
+	// ****************************************************************
+    return nil
+}
+
+```
+
+### v0.10.3 新增特性
+
+- [新增] Neo 开箱即用的 AI 助手 **(Beta)**
+- [新增] 应用打包为独立制品 **(Beta)**
+- [重构] 低代码框架 Gou Framework
+- [新增] OpenAI 处理器, 应用**接入 ChatGPT**
+- [新增] AIGC 处理器，**把大模型变成万能处理器**
+- [新增] Dashboard 等多个页面级 UI 组件
+- [其他] 已知 Bug 修复和部分功能优化
+
+更多介绍参考官方仓库或官网:
+
+**Github:** https://github.com/yaoapp/yao
+
+**Gitee:** https://gitee.com/mirrors/Yao (镜像)
+
+## 贡献者和第三方资源
+
+历经大半年的持续迭代，Yao 从一个我们自用的工具，逐渐走向成熟。
+
+目前 Yao 已被一些知名公司使用，用于管理系统开发、 API 平台、软硬一体机（ARM64 设备）等多种场景。
+
+**感谢贡献者和早期踩坑的开发者们！在大家的支持和努力下，Yao 每天都变的更好。**
+
+### 贡献者列表
+
+- [Max(Trheyi)](https://github.com/trheyi)
+- [MatrixAge(Wendao)](https://github.com/MatrixAge)
+- [QJAutumn](https://github.com/QJAutumn)
+- [Vincent(wwsheng009)](https://github.com/wwsheng009)
+- [ALMAS](https://github.com/almas1992)
+- 小明
+- [thlz998](https://github.com/thlz998)
+- [wangyuheng](https://github.com/wangyuheng)
+- [viney](https://github.com/viney)
+- [Abbet(AbbetWang)](https://github.com/AbbetWang)
+- [YahuiAn](https://github.com/YahuiAn)
+- [changfeng(zhuangxupeng)](https://github.com/zhuangxupeng)
+- [萧十一郎(xiaobinqt)](https://github.com/xiaobinqt)
+- [李润泽(run-ze)](https://github.com/run-ze)
+
+（Gou, Yao, docs 等多个仓库）
+
+### 第三方资源
+
+- [YaoDocs](https://wwsheng009.github.io/yao-docs/) By [@Vincent](https://github.com/wwsheng009)
+- [Yao Admin 增强版](https://github.com/wwsheng009/yao-admin) By [@Vincent](https://github.com/wwsheng009)
+- [Windows 移植适配](https://wwsheng009.github.io/yao-docs/%E6%BA%90%E4%BB%A3%E7%A0%81/%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/windows%E7%89%88%E6%9C%AC%E9%80%82%E9%85%8D/windows%20pack%E5%8A%9F%E8%83%BD%E9%80%82%E9%85%8D.html) By @小明
+
+## 组件即产品
+
+![组件即产品](https://release-bj.yaoapps.com/docs/v0.10.3/release/widgets.png)
+
+应用软件设计开发，是一个复杂的系统工程，程序编码也只是其中最容易的一环。
+
+Yao 设计的初衷，并非只为提升软件开发中的编码效率，我们思考更多的是软件如何更好的工程化，如何大幅提升组件的复用率，如何降低沟通成本，软件产品化到底应该怎样做。
+
+在过去几年的实践中，我们尝试过代码生成器、托拉拽生成配置等多种低代码方案，最终迭代成了 Yao 现有的方案：**组件即产品**。
+
+通过**改变软件产品粒度**，解决软件产品标准化的难题。在过去一年的验证中，这个办法行之有效。
+
+### DSL 编程
+
+Yao 将低代码的能力和广义组件，封装到了应用引擎中，最终以一个命令行工具的形态，**下载即用**。
+
+通过 Yao DSL 将各种组件组装为应用，编写体验类似于用 HTML 编写网页，不同的是 Yao DSL 可以直接可以描述出一个个功能模块。
+
+Yao DSL 采用 JSON 或 YAML 格式，开发者理解 DSL 结构和语义后，结合 Studio API 可以很容易自建 DSL 编写工具，并**不限于托拉拽图形界面**，也可根据上下文逻辑生成。这也是我们所倡导的 **用程序编程序** 的应用开发理念，AIGC 时代背景下这个办法更为有效。
+
+### AIGC + 低代码 + 专业编程 无缝衔接 持续迭代
+
+大半年前， 在 v0.10.2 发版的博文中曾提到:
+
+**“我们始终坚信, 在未来的程序开发中, AI 助手可以完成 90% 的工作, 开发者在 AI 的工作成果基础上微调即可。”**
+
+ChatGPT 问世之后，AI 助手真的可以完成近乎 60% 的工作，**工程师真的只要在基础上调整即可**。
+
+工程师可以调整的一个重要前提，就是工程师可以 **理解 AI 生成的代码**，并且可以 **在同一个工程中修改调试**。
+
+在 Yao 的解决方案中，工程师可精确掌控逻辑， 不管 AI 生成、图形界面生成、程序上下文生成，工程师均可随时接手，去实现更复杂的逻辑。
+
+通过内建 v8 引擎，结合内建处理器和 JS API， 逻辑表述能力几乎没有限制，这也意味着 Yao 几乎没有实现不了的业务逻辑。
+
+## 最后
+
+Yao v0.10.3 虽然已经可以做很多事情，也有不少生产环境案例，但仍然为 v0 版本，v0.10.3 的文档仍在编写中，一些功能细节仍需完善。
+
+我们也将持续改进，v1.0 正式版计划在年内发布。
