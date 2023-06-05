@@ -13,19 +13,6 @@
     "path": "weekly/blog/zh-cn/v0.10.3"
   },
   {
-    "abstract": "Yao v0.10.2 重构了界面引擎、新增 Studio CLI、DSL 编写处理器, 发布了 Yao Brain 平台 (DEMO 版)。 \n\n基于这些新特性, 开发者可以**轻松**根据上下文逻辑, **用程序编程序**, 开发出 **真无代码** 产品。\n\n为了演示效果, 我们用 Yao 开发了一个通用管理后台Yao Admin...",
-    "author": "Max",
-    "content": "",
-    "created_at": "2023-05-29 05:22:42",
-    "id": 2,
-    "lang": "Chinese",
-    "published_at": "2022-11-21 11:32:05",
-    "status": "已发布",
-    "title": "YAO 0.10.2 正式发布 你好零代码",
-    "updated_at": null,
-    "path": "weekly/blog/zh-cn/v0.10.2"
-  },
-  {
     "abstract": "Yao 0.10.2 is finally officially released! \n    \nRefactored the Xgen UI engine, added Studio CLI, and DSL processes, and released the Yao Brain platform (DEMO version).",
     "author": "Max",
     "content": "",
